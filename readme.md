@@ -16,28 +16,28 @@ Instructions to use the real sass compiler in Vaadin app
 4. Move the "mytheme" theme stubb created by archetype from /src/main/webapp/VAADIN/themes/mytheme to this new themes directory.
 
 5. Configure sass-mave-plugin to compile your theme only:``
-  <plugin>
-    <groupId>org.jasig.maven</groupId>
-    <artifactId>sass-maven-plugin</artifactId>
-    <configuration>
-    	<resources>
-    		<resource>
-    			<source>
-    				<directory>${basedir}/src/main/themes/mytheme</directory>
-    			</source>
-    			<destination>${basedir}/src/main/webapp/VAADIN/themes/mytheme</destination>
-    		</resource>
-    	</resources>
-    </configuration>
-    <executions>
-    	<execution>
-    		<goals>
-    			<goal>update-stylesheets</goal>
-    		</goals>
-    		<phase>process-resources</phase>
-    	</execution>
-    </executions>
-  </plugin>`` 
+	<plugin>
+	<groupId>org.jasig.maven</groupId>
+	<artifactId>sass-maven-plugin</artifactId>
+	<configuration>
+		<resources>
+			<resource>
+				<source>
+					<directory>${basedir}/src/main/themes/mytheme</directory>
+				</source>
+				<destination>${basedir}/src/main/webapp/VAADIN/themes/mytheme</destination>
+			</resource>
+		</resources>
+	</configuration>
+	<executions>
+		<execution>
+			<goals>
+				<goal>update-stylesheets</goal>
+			</goals>
+			<phase>process-resources</phase>
+		</execution>
+	</executions>
+	</plugin>`` 
   
   
   If you are extremely pedant with maven conventions, compile to output directory, but then notice that e.g. jetty:run or WTP servers don't find your compiled css without further configuration.
@@ -46,11 +46,11 @@ Now sass compilation is hooked to your normal maven build. Also you can force it
 
 You can still optimise the setup slightly by ignoring vaadin-theme-compiler module and its transient dependencies. At least it should bring down your war file size. Add following exclusion rule to your vaadin-server dependency:
 
-``  <exclusions>
-  	<exclusion>
-  		<groupId>com.vaadin</groupId>
-  		<artifactId>vaadin-theme-compiler</artifactId>
-  	</exclusion>
+``	<exclusions>
+	<exclusion>
+		<groupId>com.vaadin</groupId>
+		<artifactId>vaadin-theme-compiler</artifactId>
+	</exclusion>
   </exclusions>
 ``
 
