@@ -1,0 +1,23 @@
+@mixin runo-progressindicator($primaryStyleName : v-progressindicator) {
+
+.#{$primaryStyleName}-wrapper {
+	background: #dfe2e4 url(../runo/progressindicator/img/base.gif) repeat-x;
+	border: 1px solid #b6bbbc;
+}
+.v-disabled .#{$primaryStyleName}-wrapper {
+	background-image: url(../runo/progressindicator/img/disabled.gif);
+}
+.#{$primaryStyleName}-indicator {
+	background: #f7f9f9 url(../runo/progressindicator/img/progress.png);
+}
+.#{$primaryStyleName}-indicator {
+	background: #f7f9f9 url(../runo/progressindicator/img/progress.png);
+}
+.#{$primaryStyleName}-indeterminate {
+	background: #fff url(../base/common/img/ajax-loader-medium.gif) no-repeat 50%;
+}
+.#{$primaryStyleName}-indeterminate-disabled {
+	background: #dfe2e4;
+}
+
+}
